@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProgramPost from "../../components/ProgramPost.astro";
+
+export async function getStaticPaths() {
+  const allPrograms = await getCollection("programs");
+  const uniqueTags = [
+    ...new Set(allPrograms.map((program: any) => program.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPrograms = allPrograms.filter((program: any) =>
+      program.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { programs: filteredPrograms },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { programs } = Astro.props;
+const filteredPrograms = programs.filter((program) =>
+  program.data.tags?.includes(tag)
+);
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Programs tagged with {tag}</p>
+  <ul>
+    {
+      programs.map((program: any) => (
+        <ProgramPost
+          url={`/programs/${program.id}/`}
+          title={program.data.title}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>

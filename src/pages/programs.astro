@@ -1,21 +1,21 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProgramPost from "../components/ProgramPost.astro";
+const allPrograms = await getCollection("programs");
 const pageTitle = "Programs Funded by the BHS Innovation Fund";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+  <p>This is where I will post about my journey learning Astro.</p>
   <ul>
-    <li>
-      <a href="/program/heritage-spanish-speaker-pathway/"
-        >Heritage Spanish-Speaker Pathway</a
-      >
-    </li>
-    <li>
-      <a href="/program/public-memory/">Public Memory</a>
-    </li>
-    <li>
-      <a href="/program/queer-student-program/">Queer Student Program</a>
-    </li>
+    {
+      allPrograms.map((program: any) => (
+        <ProgramPost
+          url={`/programs/${program.id}/`}
+          title={program.data.title}
+        />
+      ))
+    }
   </ul>
 </BaseLayout>
