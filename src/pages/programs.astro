@@ -1,34 +1,21 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Programs Funded by the BHS Innovation Fund";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/programs/">Programs</a>
-
-    <h1>{pageTitle}</h1>
-
-    <ul>
-      <li>
-        <a href="/program/heritage-spanish-speaker-pathway/"
-          >Heritage Spanish-Speaker Pathway</a
-        >
-      </li>
-      <li>
-        <a href="/program/public-memory/">Public Memory</a>
-      </li>
-      <li>
-        <a href="/program/queer-student-program/">Queer Student Program</a>
-      </li>
-    </ul>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+  <ul>
+    <li>
+      <a href="/program/heritage-spanish-speaker-pathway/"
+        >Heritage Spanish-Speaker Pathway</a
+      >
+    </li>
+    <li>
+      <a href="/program/public-memory/">Public Memory</a>
+    </li>
+    <li>
+      <a href="/program/queer-student-program/">Queer Student Program</a>
+    </li>
+  </ul>
+</BaseLayout>

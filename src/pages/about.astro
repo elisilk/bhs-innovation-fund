@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About the BHS Innovation Fund";
 
 const advisors = [
@@ -25,40 +26,41 @@ const advisors = [
   "Audrey Winter-Driben",
   "Melissa Hale Woodman (Communications/Fundraising Committee, Co-Chair)",
 ];
+
+const advisorColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/programs/">Programs</a>
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    At the BHS Innovation Fund, our mission is to catalyze innovation at
+    Brookline High School by supporting faculty-driven curricular initiatives
+    that will inspire our students and prepare them to thrive in a changing
+    world.
+  </p>
+  <p>
+    Our vision is for Brookline High School to provide an unparalleled education
+    by instilling a passion for academic exploration and a commitment to
+    innovation. We serve as venture philanthropy for BHS by investing in
+    courses, programs, forums and research that help school leadership and
+    faculty to continue to deliver excellence in public education.
+  </p>
 
-    <h1>{pageTitle}</h1>
-    <p>
-      At the BHS Innovation Fund, our mission is to catalyze innovation at
-      Brookline High School by supporting faculty-driven curricular initiatives
-      that will inspire our students and prepare them to thrive in a changing
-      world.
-    </p>
-    <p>
-      Our vision is for Brookline High School to provide an unparalleled
-      education by instilling a passion for academic exploration and a
-      commitment to innovation. We serve as venture philanthropy for BHS by
-      investing in courses, programs, forums and research that help school
-      leadership and faculty to continue to deliver excellence in public
-      education.
-    </p>
+  <h2>Board of Advisors</h2>
+  <ol>
+    {advisors.map((advisor) => <li class="advisor">{advisor}</li>)}
+  </ol>
+</BaseLayout>
 
-    <h2>Board of Advisors</h2>
-    <ol>
-      {advisors.map((advisor) => <li>{advisor}</li>)}
-    </ol>
-  </body>
-</html>
+<style define:vars={{ advisorColor, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .advisor {
+    color: var(--advisorColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
