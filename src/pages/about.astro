@@ -1,5 +1,30 @@
 ---
+const pageTitle = "About the BHS Innovation Fund";
 
+const advisors = [
+  "Jennifer Amigone",
+  "Maria Arado-McDonald",
+  "Annemieke Atema",
+  "Jennifer Casas",
+  "Kim Castro",
+  "Cher Duffield",
+  "Elizabeth Gardner",
+  "Jennie Greene (Communications/Fundraising Committee, Co-Chair)",
+  "Natasha Goldman Homann",
+  "Mary Lochner Hurwitz",
+  "Gene Keselman",
+  "James Kessler",
+  "Adi Kitov",
+  "Anne Le Brun",
+  "Nancy Lee",
+  "Robert Neer",
+  "Charu Puri-Sharma",
+  "Tracy Shupp (Communications/Fundraising Committee, Co-Chair)",
+  "Eli Silk (Program Committee, Chair)",
+  "Jennifer Wells",
+  "Audrey Winter-Driben",
+  "Melissa Hale Woodman (Communications/Fundraising Committee, Co-Chair)",
+];
 ---
 
 <html lang="en">
@@ -8,14 +33,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>BHS Innovation Fund</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/programs/">Programs</a>
 
-    <h1>About the BHS Innovation Fund</h1>
+    <h1>{pageTitle}</h1>
     <p>
       At the BHS Innovation Fund, our mission is to catalyze innovation at
       Brookline High School by supporting faculty-driven curricular initiatives
@@ -30,5 +55,10 @@
       leadership and faculty to continue to deliver excellence in public
       education.
     </p>
+
+    <h2>Board of Advisors</h2>
+    <ol>
+      {advisors.map((advisor) => <li>{advisor}</li>)}
+    </ol>
   </body>
 </html>
