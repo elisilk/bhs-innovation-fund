@@ -6,6 +6,9 @@ description: "Providing concrete ways for BHS LGBTQ youth to be seen and heard, 
 image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "The Astro logo on a dark background with rainbow rays."
+image2:
+  src: "../images/queer-student-program-photo-01.jpg"
+  alt: "Queer Student Program (QSP) photo 1."
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
 

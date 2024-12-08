@@ -6,6 +6,9 @@ description: "My Language, My Heritage: Providing a supportive learning environm
 image:
   url: "https://docs.astro.build/assets/rose.webp"
   alt: "The Astro logo on a dark background with a pink glow."
+image2:
+  src: "../images/heritage-spanish-speaker-pathway-photo-01.jpg"
+  alt: "Heritage Spanish Speaker Pathway photo 1."
 tags: ["astro", "blogging", "learning in public"]
 ---
 

@@ -6,6 +6,9 @@ description: "A refresh of this fund-supported program with a focus on the ethic
 image:
   url: "https://docs.astro.build/default-og-image.png"
   alt: "The word astro against an illustration of planets and stars."
+image2:
+  src: "../images/reimagined-social-justice-photo-01.jpg"
+  alt: "Heritage Spanish Speaker Pathway photo 1."
 tags: ["astro", "successes"]
 ---
 
