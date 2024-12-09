@@ -1,8 +1,141 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "BHS Innovation Fund";
+const pageTitle = "Homepage - BHS Innovation Fund";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+<BaseLayout pageTitle={pageTitle} showPageTitle={false}>
+  <section class="[ hero ]" aria-labelledby="hero-heading">
+    <div class="[ flow ]">
+      <h2 id="hero-heading">
+        The BHS Innovation Fund has been changing culture and lives at Brookline
+        High School for more than 25 years.
+      </h2>
+      <a
+        href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
+        class="button"
+        rel="external"
+        target="_blank">Donate Today</a
+      >
+    </div>
+  </section>
+
+  <section class="[ impact ]" aria-labelledby="impact-heading">
+    <h2 id="impact-heading" class="visually-hidden">Impact</h2>
+    <div>
+      <span>30+</span> academic, cultural and support programs funded to date
+    </div>
+    <div>
+      <span>$7M+</span> invested in groundbreaking curriculum at BHS
+    </div>
+    <div>
+      <span>2000+</span> students benefit each year from a culture of innovation
+    </div>
+  </section>
+
+  <section class="[ highlights ]" aria-labelledby="highlights-heading">
+    <h2 id="highlights-heading" class="visually-hidden">Call to Actions</h2>
+    <div class="highlights__rows">
+      <div class="highlight__row">
+        <img
+          class="highlight__image"
+          src="/src/images/highlight-photo-01.jpg"
+          alt=""
+        />
+        <div class="highlight__content">
+          <p>
+            We encourage faculty to experiment by teaching interdisciplinary
+            courses and approaching curriculum design creatively.
+          </p>
+          <p>
+            We ensure students gain exposure to new ideas and different ways of
+            learning so they can thrive.
+          </p>
+          <a href="#" class="button">See the Impact</a>
+        </div>
+      </div>
+      <div class="highlight__row">
+        <img
+          class="highlight__image"
+          src="/src/images/highlight-photo-02.jpg"
+          alt=""
+        />
+        <div class="highlight__content">
+          <p>
+            We provide grants to BHS faculty to fund innovative courses and
+            initiatives.
+          </p>
+          <p>
+            Selected programs may be incorporated into the permanent BHS
+            offerings.
+          </p>
+          <a href="#" class="button">Learn about the Process</a>
+        </div>
+      </div>
+      <div class="highlight__row">
+        <img
+          class="highlight__image"
+          src="/src/images/highlight-photo-03.jpg"
+          alt=""
+        />
+        <div class="highlight__content">
+          <p>
+            All BHS students have the opportunity to explore unique areas of
+            interest, develop project-based learning skills, and reinforce
+            academic and social foundations for growth.
+          </p>
+          <a href="#" class="button">See all Programs</a>
+        </div>
+      </div>
+      <div class="highlight__row">
+        <img
+          class="highlight__image"
+          src="/src/images/highlight-photo-04.jpg"
+          alt=""
+        />
+        <div class="highlight__content">
+          <p>
+            The BHS Innovation Fund is a non-profit 501(c)(3) organization that
+            is solely reliant on community support.
+          </p>
+          <a href="#" class="button">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs" aria-labelledby="programs-heading">
+    <h2 id="programs-heading">Featured Programs</h2>
+    <div>
+      <article><h3>Featured Program 1</h3></article>
+      <article><h3>Featured Program 2</h3></article>
+      <article><h3>Featured Program 3</h3></article>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .highlight__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    align-items: center;
+  }
+
+  .highlight__row:nth-of-type(even) > .highlight__image {
+    grid-column: 2;
+  }
+
+  .highlight__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .highlight__content {
+    padding: 2rem;
+    text-align: center;
+
+    & > * + * {
+      margin-block-start: 1.5rem;
+    }
+  }
+</style>

@@ -1,11 +1,143 @@
----
-import Navigation from "./Navigation.astro";
-import Hamburger from "./Hamburger.astro";
----
-
 <header>
-  <nav>
-    <Hamburger />
-    <Navigation />
-  </nav>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+  <div class="banner">
+    <p>MERRY + BRIGHT = ACADEMIC INNOVATION! Join us in shaping merry and bright futures this season. GIVE TODAY!</p>
+  </div>
+
+  <div class="header">
+    <a href="/" class="logo"><img
+      src="/images/logo/BIF-Logo-Color-Transparent.png"
+      alt="BHS Innovation Fund logo"
+      width="100"
+    /></a>
+  
+    <button class="nav-controls" aria-controls="primary-nav" aria-expanded="false">
+      <span class="visually-hidden">Menu</span>
+      <img class="icon-hamburger" src="/images/icons/icon-menu.svg" alt=""></img>
+      <img class="icon-close" src="/images/icons/icon-menu-close.svg" alt=""></img>
+    </button>
+
+    <nav id="primary-nav">
+      <ul class="nav-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/programs/">Programs</a></li>
+        <li><a href="/tags/">Tags</a></li>
+        <li><a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WMETUBMXB4DEQ&amp;source=url" rel="external" target="_blank">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+  
 </header>
+
+<style>
+  header {
+    border-bottom: 5px solid var(--clr-yellow-400);
+  }
+
+  .banner {
+    width: 100%;
+    background-color: var(--clr-blue-400);
+    color: var(--clr-neutral-100);
+    padding: 1rem;
+  }
+
+  .header {
+    box-sizing: content-box;
+    /* position: sticky; */
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-accent-400);
+    }
+  }
+
+  .logo {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .skip-to-main {
+    position: absolute;
+    padding: .5em 2em;
+    translate: -200%;
+
+    &:hover, &:focus-visible {
+      background-color: var(--clr-accent-400);
+      color: var(--clr-neutral-900);
+      translate: 0;
+    }
+  }
+
+  /* nav styles */
+
+  .nav-controls {
+    display: none;
+
+    .icon-close {
+      display: none;
+    }
+  }
+
+  nav > ul {
+    list-style: none;
+    margin: 0;
+    padding; 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  @media screen and (width < 650px) {
+    .nav-controls {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      z-index: 2;
+      cursor: pointer;
+      padding: 1rem;
+      background: transparent;
+      border: 0;
+    }
+
+    nav {
+      display: none;
+    }
+
+    [aria-expanded="true"] {
+      .icon-close {
+        display: block;
+      }
+
+      .icon-hamburger {
+        display: none;
+      }
+    }
+
+    [aria-expanded="true"] + nav {
+      display: block;
+      z-index: 1;
+      position: absolute;
+      inset: 0;
+      width: 80%;
+      margin-inline-start: auto;
+      background-color: var(--clr-neutral-100);
+      box-shadow: 0 0 0 100vmax hsl(0 0 0 / .4);
+
+      ul {
+        display: grid;
+        margin-block-start: 20vh;
+        margin-inline-start: 1rem;
+      }
+    }
+  }
+</style>

@@ -2,16 +2,94 @@
 import Social from "./Social.astro";
 ---
 
+<footer>
+  <h2 class="visually-hidden">
+    Additional ways to connect with the BHS Innovation Fund
+  </h2>
+  <div class="links">
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>bhsinnovationfund@psbma.org</li>
+        <li>617-713-5201</li>
+        <li>115 Greenough St Brookline, MA 02445</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Follow</h3>
+      <ul>
+        <li><Social platform="youtube" username="astrodotbuild" /></li>
+        <li><Social platform="twitter" username="astrodotbuild" /></li>
+        <li><Social platform="github" username="withastro" /></li>
+        <li><Social platform="youtube" username="astrodotbuild" /></li>
+        <li><Social platform="youtube" username="astrodotbuild" /></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Connect</h3>
+      <a href="" class="button">Newsletter Subscribe</a>
+    </div>
+    <div>
+      <h3>Quicklinks</h3>
+      <ul>
+        <li><a href="#">Impact</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 2024 BHS Innovation Fund</p>
+  </div>
+</footer>
+
 <style>
   footer {
-    display: flex;
+    display: grid;
+    color: var(--clr-neutral-100);
+  }
+
+  footer h3 {
+    color: var(--clr-neutral-100);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: var(--fw-regular);
+  }
+
+  .links {
+    display: grid;
     gap: 1rem;
-    margin-top: 2rem;
+    background-color: var(--clr-blue-400);
+
+    & > div {
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (width > 550px) {
+    .links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (width > 850px) {
+    .links {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-yellow-400);
+    padding: 1rem;
+
+    & > p {
+      text-transform: uppercase;
+      color: var(--clr-neutral-900);
+    }
   }
 </style>
-
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
-</footer>

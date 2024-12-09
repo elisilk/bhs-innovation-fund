@@ -2,21 +2,56 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+const { pageTitle, showPageTitle = true } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="BHS Innovation Fund" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="The website for the Brookline High School Innovation Fund, a nonprofit focused on funding teacher-driven curricular innovations at Brookline High School in Brookline, MA, USA."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="base-layout">
     <Header />
-    <main>
-      <h1>{pageTitle}</h1>
+    <main id="main-content">
+      {
+        showPageTitle ? (
+          <h1>{pageTitle}</h1>
+        ) : (
+          <h1 class="visually-hidden">pageTitle</h1>
+        )
+      }
       <slot />
     </main>
     <Footer />
