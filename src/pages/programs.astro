@@ -7,15 +7,17 @@ const pageTitle = "Programs Funded by the BHS Innovation Fund";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
-    {
-      allPrograms.map((program: any) => (
-        <ProgramPost
-          url={`/programs/${program.id}/`}
-          title={program.data.title}
-          image={program.data.image2.src}
-        />
-      ))
-    }
-  </ul>
+  <div class="[ wrapper ]">
+    <ul>
+      {
+        allPrograms.map((program: any) => (
+          <ProgramPost
+            url={`/programs/${program.id}/`}
+            title={program.data.title}
+            image={program.data.image2.src}
+          />
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

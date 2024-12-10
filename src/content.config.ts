@@ -18,7 +18,8 @@ const programs = defineCollection({
         src: image(),
         alt: z.string()
       }),
-      tags: z.array(z.string())
+      tags: z.array(z.string()),
+      featured: z.boolean()
     })
 });
 // Export a single `collections` object to register your collection(s)

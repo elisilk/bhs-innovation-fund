@@ -10,6 +10,7 @@ image2:
   src: "../images/queer-student-program-photo-01.jpg"
   alt: "Queer Student Program (QSP) photo 1."
 tags: ["astro", "learning in public", "setbacks", "community"]
+featured: true
 ---
 
 The QSP was designed to support LGBTQ students throughout their experience at BHS. The program includes two course offerings: a new Wellness course and a 12th grade elective called “The History & Science of Sex and Gender.” The QSP also offers critical affinity programming, including a 9th grade Hub/Advisory class specifically for LGBTQ students and the launch of the “OUTstanding Speaker Series” in collaboration with other school affinity groups at BHS. In addition, the program will pilot a new position—Director of Queer Student Services at BHS. The QSP was developed and will be led by in interdepartmental team.

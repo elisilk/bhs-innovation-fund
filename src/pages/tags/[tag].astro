@@ -28,15 +28,17 @@ const filteredPrograms = programs.filter((program) =>
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p>Programs tagged with {tag}</p>
-  <ul>
-    {
-      programs.map((program: any) => (
-        <ProgramPost
-          url={`/programs/${program.id}/`}
-          title={program.data.title}
-        />
-      ))
-    }
-  </ul>
+  <div class="[ wrapper ]">
+    <p>Programs tagged with {tag}</p>
+    <ul>
+      {
+        programs.map((program: any) => (
+          <ProgramPost
+            url={`/programs/${program.id}/`}
+            title={program.data.title}
+          />
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

@@ -33,34 +33,25 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>
-    At the BHS Innovation Fund, our mission is to catalyze innovation at
-    Brookline High School by supporting faculty-driven curricular initiatives
-    that will inspire our students and prepare them to thrive in a changing
-    world.
-  </p>
-  <p>
-    Our vision is for Brookline High School to provide an unparalleled education
-    by instilling a passion for academic exploration and a commitment to
-    innovation. We serve as venture philanthropy for BHS by investing in
-    courses, programs, forums and research that help school leadership and
-    faculty to continue to deliver excellence in public education.
-  </p>
+  <div class="[ wrapper ]">
+    <p>
+      At the BHS Innovation Fund, our mission is to catalyze innovation at
+      Brookline High School by supporting faculty-driven curricular initiatives
+      that will inspire our students and prepare them to thrive in a changing
+      world.
+    </p>
+    <p>
+      Our vision is for Brookline High School to provide an unparalleled
+      education by instilling a passion for academic exploration and a
+      commitment to innovation. We serve as venture philanthropy for BHS by
+      investing in courses, programs, forums and research that help school
+      leadership and faculty to continue to deliver excellence in public
+      education.
+    </p>
 
-  <h2>Board of Advisors</h2>
-  <ol>
-    {advisors.map((advisor) => <li class="advisor">{advisor}</li>)}
-  </ol>
+    <h2>Board of Advisors</h2>
+    <ol>
+      {advisors.map((advisor) => <li class="advisor">{advisor}</li>)}
+    </ol>
+  </div>
 </BaseLayout>
-
-<style define:vars={{ advisorColor, fontWeight, textCase }}>
-  h1 {
-    color: purple;
-    font-size: 4rem;
-  }
-  .advisor {
-    color: var(--advisorColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
-</style>

@@ -42,21 +42,33 @@ const { pageTitle, showPageTitle = true } = Astro.props;
 
     <title>{pageTitle}</title>
   </head>
-  <body class="base-layout">
+  <body class="[ bg-neutral ]">
     <Header />
+
     <main id="main-content">
       {
         showPageTitle ? (
-          <h1>{pageTitle}</h1>
+          <div class="[ page-title ] [ wrapper ]">
+            <h1>{pageTitle}</h1>
+          </div>
         ) : (
           <h1 class="visually-hidden">pageTitle</h1>
         )
       }
       <slot />
     </main>
+
     <Footer />
+
     <script>
       import "../scripts/menu.js";
     </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
