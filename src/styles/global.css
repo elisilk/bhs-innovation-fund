@@ -179,6 +179,12 @@ body {
 
 /* Utilities */
 
+/* Spacing */
+
+.list-no-padding {
+  padding: 0;
+}
+
 /* Color */
 
 .bg-neutral {
@@ -433,6 +439,10 @@ header {
 
 .highlight__row {
   display: grid;
+}
+
+.highlight__text {
+  font-size: var(--fs-500);
 }
 
 @media screen and (width > 650px) {

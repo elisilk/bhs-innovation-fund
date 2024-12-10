@@ -130,7 +130,7 @@ const allPrograms = await getCollection("programs", ({ data }) => {
   <section class="[ programs ]" aria-labelledby="featured-programs-heading">
     <div class="[ programs__content ] [ wrapper ]">
       <h2 id="featured-programs-heading">Featured Programs</h2>
-      <ul class="[ switcher ]">
+      <ul class="[ switcher list-no-padding ]">
         {
           allPrograms.map((program: any) => (
             <li>
