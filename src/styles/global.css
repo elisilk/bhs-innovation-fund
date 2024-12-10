@@ -587,6 +587,7 @@ nav > ul {
     margin: 0;
     background: transparent;
     border: 0;
+    color: var(--clr-body);
 
     &:hover,
     &:focus-visible {
