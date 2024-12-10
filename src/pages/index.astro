@@ -4,6 +4,12 @@ const pageTitle = "Homepage - BHS Innovation Fund";
 
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+
+import highlightImage1 from "../images/highlight-photo-01.jpg";
+import highlightImage2 from "../images/highlight-photo-02.jpg";
+import highlightImage3 from "../images/highlight-photo-03.jpg";
+import highlightImage4 from "../images/highlight-photo-04.jpg";
+
 const allPrograms = await getCollection("programs", ({ data }) => {
   return data.featured === true;
 });
@@ -49,10 +55,10 @@ const allPrograms = await getCollection("programs", ({ data }) => {
     <h2 id="highlights-heading" class="[ visually-hidden ]">Highlights</h2>
     <div class="[ highlights__content ] [ wrapper--full ]">
       <div class="highlight__row">
-        <img
+        <Image
+          src={highlightImage1}
+          alt="A student in class looking on intently."
           class="highlight__image"
-          src="/src/images/highlight-photo-01.jpg"
-          alt=""
         />
         <div class="highlight__text">
           <p>
@@ -63,14 +69,14 @@ const allPrograms = await getCollection("programs", ({ data }) => {
             We ensure students gain exposure to new ideas and different ways of
             learning so they can thrive.
           </p>
-          <a href="#" class="button">See the Impact</a>
+          <a class="button" href="/impact/">See the Impact</a>
         </div>
       </div>
       <div class="highlight__row">
-        <img
+        <Image
+          src={highlightImage2}
+          alt="Two students at a desk laughing while listening to audio through a shared device."
           class="highlight__image"
-          src="/src/images/highlight-photo-02.jpg"
-          alt=""
         />
         <div class="highlight__text">
           <p>
@@ -81,14 +87,14 @@ const allPrograms = await getCollection("programs", ({ data }) => {
             Selected programs may be incorporated into the permanent BHS
             offerings.
           </p>
-          <a href="#" class="button">Learn about the Process</a>
+          <a class="button" href="/process/">Learn about the Process</a>
         </div>
       </div>
       <div class="highlight__row">
-        <img
+        <Image
+          src={highlightImage3}
+          alt="A student smiling at another at a desk and writing in a notebook."
           class="highlight__image"
-          src="/src/images/highlight-photo-03.jpg"
-          alt=""
         />
         <div class="highlight__text">
           <p>
@@ -96,21 +102,26 @@ const allPrograms = await getCollection("programs", ({ data }) => {
             interest, develop project-based learning skills, and reinforce
             academic and social foundations for growth.
           </p>
-          <a href="#" class="button">See all Programs</a>
+          <a class="button" href="/programs/">See all Programs</a>
         </div>
       </div>
       <div class="highlight__row">
-        <img
+        <Image
+          src={highlightImage4}
+          alt="Multiple students with backpacks outside sitting on a short wall and one laughing with a camera."
           class="highlight__image"
-          src="/src/images/highlight-photo-04.jpg"
-          alt=""
         />
         <div class="highlight__text">
           <p>
             The BHS Innovation Fund is a non-profit 501(c)(3) organization that
             is solely reliant on community support.
           </p>
-          <a href="#" class="button">Donate Now</a>
+          <a
+            class="button"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
+            rel="external"
+            target="_blank">Donate Now</a
+          >
         </div>
       </div>
     </div>

@@ -272,6 +272,12 @@ header {
   }
 }
 
+.header__main .logo__image {
+  object-fit: contain;
+  height: 100px;
+  width: auto;
+}
+
 /* Blocks -- Sections -- Footer */
 
 .footer__main {
@@ -534,11 +540,6 @@ a {
 
 .icon--64 {
   font-size: 64px;
-}
-
-.logo {
-  display: block;
-  flex: 0 0 auto;
 }
 
 .skip-to-main {

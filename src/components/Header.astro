@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import logoImage from "../images/logo/BIF-Logo-Color-Transparent-320w-321h.png";
 ---
 
 <header>
@@ -16,11 +17,12 @@
 
   <div class="[ header__main ]">
     <div class="[ wrapper ]">
-      <a href="/" class="[ logo ]"
-        ><img
-          src="/images/logo/BIF-Logo-Color-Transparent.png"
+      <a href="/" class="[ logo ]">
+        <Image
+          src={logoImage}
           alt="BHS Innovation Fund logo"
-          width="100"
+          class="logo__image"
+          loading="eager"
         /></a
       >
 

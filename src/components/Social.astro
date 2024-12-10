@@ -1,7 +1,8 @@
 ---
-const { url, icon } = Astro.props;
+const { url, icon, alt } = Astro.props;
 ---
 
 <a href={url} rel="external" target="_blank"
-  ><ion-icon name={icon}></ion-icon></a
+  ><ion-icon name={icon} aria-hidden="true"></ion-icon>
+  <span class="visually-hidden">{alt}</span></a
 >

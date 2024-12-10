@@ -7,8 +7,8 @@ image:
   url: "https://docs.astro.build/assets/arc.webp"
   alt: "The Astro logo on a dark background with a purple gradient arc."
 image2:
-  src: "../images/public-memory-photo-01.jpg"
-  alt: "Heritage Spanish Speaker Pathway photo 1."
+  src: "../images/programs/public-memory-photo-01.jpg"
+  alt: "Maureen Fallon, chair of the Innovation Fund, talking at the Gala in spring 2023."
 tags: ["astro", "blogging", "learning in public", "successes"]
 featured: false
 ---

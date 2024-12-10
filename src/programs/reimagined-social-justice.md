@@ -7,8 +7,8 @@ image:
   url: "https://docs.astro.build/default-og-image.png"
   alt: "The word astro against an illustration of planets and stars."
 image2:
-  src: "../images/reimagined-social-justice-photo-01.jpg"
-  alt: "Heritage Spanish Speaker Pathway photo 1."
+  src: "../images/programs/reimagined-social-justice-photo-01.jpg"
+  alt: "Keira Flynn-Carson, teacher of the Reimagined Social Justice course, talking with a student after class."
 tags: ["astro", "successes"]
 featured: true
 ---

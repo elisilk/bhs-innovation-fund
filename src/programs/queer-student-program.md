@@ -7,8 +7,8 @@ image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "The Astro logo on a dark background with rainbow rays."
 image2:
-  src: "../images/queer-student-program-photo-01.jpg"
-  alt: "Queer Student Program (QSP) photo 1."
+  src: "../images/programs/queer-student-program-photo-01.jpg"
+  alt: "Bren Bataclan, an LGBTQ artist, talking in the QSP OUTstanding Speaker Series in October 2024."
 tags: ["astro", "learning in public", "setbacks", "community"]
 featured: true
 ---
