@@ -6,13 +6,9 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-/* console.log(typeof frontmatter.coverImageSrc); */
-
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/programs/*.{jpeg,jpg,png,gif}"
 );
-
-/* console.log(images); */
 
 if (!images[frontmatter.coverImageSrc])
   throw new Error(
@@ -41,6 +37,17 @@ if (!images[frontmatter.coverImageSrc])
         <p class="[ program__description ]">
           <em>{frontmatter.description}</em>
         </p>
+        {
+          frontmatter.faculty && frontmatter.faculty.length > 0 && (
+            <ul>
+              {frontmatter.faculty.map((educator: any) => (
+                <li>
+                  {educator.fields.name} ({educator.fields.department})
+                </li>
+              ))}
+            </ul>
+          )
+        }
       </div>
       <div>
         <Image

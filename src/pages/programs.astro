@@ -10,9 +10,18 @@ const entries = await contentfulClient.getEntries<Program>({
   content_type: "program",
 });
 
+/* console.log(entries.items[0].fields.educators); */
+
 const allPrograms = entries.items.map((item) => {
-  const { name, slug, year, description, coverImageSrc, coverImageAlt } =
-    item.fields;
+  const {
+    name,
+    slug,
+    year,
+    description,
+    coverImageSrc,
+    coverImageAlt,
+    faculty,
+  } = item.fields;
   return {
     name,
     slug,
@@ -20,8 +29,11 @@ const allPrograms = entries.items.map((item) => {
     description,
     coverImageSrc,
     coverImageAlt,
+    faculty,
   };
 });
+
+/* console.log(allPrograms[0].educators); */
 ---
 
 <BaseLayout pageTitle={pageTitle}>
