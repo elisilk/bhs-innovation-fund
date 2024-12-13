@@ -10,17 +10,11 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
 
 <li>
   <article class="[ card ]">
-    <div class="[ img ]">
-      <Image
-        src={programImages[program.coverImageSrc]()}
-        alt={program.coverImageAlt}
-        class="card__img"
-      />
-    </div>
-    <div class="[ text ]">
-      <h3>
+    <div class="[ card__text ]">
+      <h3 class="[ card__title ]">
         <a href={`/programs/${program.slug}/`}>{program.name}</a>
       </h3>
+      <p>{program.description}</p>
       <div class="[ program__tags ]">
         <span class="[ program__tag program__tag--year ]">
           {program.year}
@@ -40,7 +34,13 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
           )
         }
       </div>
-      <p>{program.description}</p>
+    </div>
+    <div class="[ card__img ]">
+      <Image
+        src={programImages[program.coverImageSrc]()}
+        alt={program.coverImageAlt}
+        class="card__img"
+      />
     </div>
   </article>
 </li>

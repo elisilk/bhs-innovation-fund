@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProgramCard from "../components/ProgramCard.astro";
+
 const pageTitle = "Homepage - BHS Innovation Fund";
 
 import { getCollection } from "astro:content";
@@ -35,7 +37,7 @@ const featuredPrograms = entries.items.map((item) => {
   return {
     name,
     slug,
-    year: new Date(year).toLocaleDateString(),
+    year: new Date(year).getFullYear(),
     description,
     coverImageSrc,
     coverImageAlt,
@@ -170,41 +172,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
       <ul class="[ switcher list-no-padding ]">
         {
           featuredPrograms.map((program: any) => (
-            <li>
-              <article class="[ card ]">
-                <div class="[ img ]">
-                  <Image
-                    src={programImages[program.coverImageSrc]()}
-                    alt={program.coverImageAlt}
-                    class="card__img"
-                  />
-                </div>
-                <div class="[ text ]">
-                  <h3>
-                    <a href={`/programs/${program.slug}/`}>{program.name}</a>
-                  </h3>
-                  <div class="[ program__tags ]">
-                    <span class="[ program__tag program__tag--year ]">
-                      {new Date(program.year).getFullYear()}
-                    </span>
-                    {program.isActive && (
-                      <span class="[ program__tag program__tag--active ]">
-                        Active
-                      </span>
-                    )}
-                    {program.isCurrentlyFunded && (
-                      <span class="[ program__tag program__tag--current ]">
-                        {new Date(program.year).getFullYear() ===
-                        new Date().getFullYear()
-                          ? "New Award"
-                          : "Currently Funded"}
-                      </span>
-                    )}
-                  </div>
-                  <p>{program.description}</p>
-                </div>
-              </article>
-            </li>
+            <ProgramCard program={program} />
           ))
         }
       </ul>

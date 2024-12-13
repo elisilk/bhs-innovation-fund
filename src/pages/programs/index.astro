@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProgramPost from "../../components/ProgramPost.astro";
+import ProgramCard from "../../components/ProgramCard.astro";
+
 const pageTitle = "Programs - BHS Innovation Fund";
 
 import { contentfulClient } from "../../lib/contentful";
 import type { Program } from "../../lib/contentful";
-import ProgramCard from "../../components/ProgramCard.astro";
 
 const entries = await contentfulClient.getEntries<Program>({
   content_type: "program",
