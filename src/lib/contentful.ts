@@ -1,10 +1,14 @@
 import * as contentful from 'contentful'
+import type { EntryFieldTypes } from "contentful";
 
 export interface Faculty {
   contentTypeId: "faculty",
   fields: {
     name: EntryFieldTypes.Text,
-    department: EntryFieldTypes.Text
+    department: EntryFieldTypes.Text,
+    firstName: EntryFieldTypes.Text,
+    lastName: EntryFieldTypes.Text,
+    preferredFirstName: EntryFieldTypes.Text,
   }
 }
 
@@ -17,7 +21,11 @@ export interface Program {
     description: EntryFieldTypes.Text,
     coverImageSrc: EntryFieldTypes.Text,
     coverImageAlt: EntryFieldTypes.Text,
-    faculty: EntryFieldTypes.Array
+    faculty: EntryFieldTypes.Array<contentful.EntryFieldTypes.EntryLink<Faculty>>,
+    content: EntryFieldTypes.RichText,
+    isActive: EntryFieldTypes.Boolean,
+    isCurrentlyFunded: EntryFieldTypes.Boolean,
+    featuredOnHomepage: EntryFieldTypes.Boolean,
   }
 }
 

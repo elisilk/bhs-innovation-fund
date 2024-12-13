@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+const { program } = Astro.props;
+
+const programImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/programs/*.{jpeg,jpg,png,gif}"
+);
+---
+
+<li>
+  <article class="[ card ]">
+    <div class="[ img ]">
+      <Image
+        src={programImages[program.coverImageSrc]()}
+        alt={program.coverImageAlt}
+        class="card__img"
+      />
+    </div>
+    <div class="[ text ]">
+      <h3>
+        <a href={`/programs/${program.slug}/`}>{program.name}</a>
+      </h3>
+      <div class="[ program__tags ]">
+        <span class="[ program__tag program__tag--year ]">
+          {program.year}
+        </span>
+        {
+          program.isActive && (
+            <span class="[ program__tag program__tag--active ]">Active</span>
+          )
+        }
+        {
+          program.isCurrentlyFunded && (
+            <span class="[ program__tag program__tag--current ]">
+              {program.year === new Date().getFullYear()
+                ? "New Award"
+                : "Currently Funded"}
+            </span>
+          )
+        }
+      </div>
+      <p>{program.description}</p>
+    </div>
+  </article>
+</li>

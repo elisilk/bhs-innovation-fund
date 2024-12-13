@@ -1,10 +1,11 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ProgramPost from "../components/ProgramPost.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProgramPost from "../../components/ProgramPost.astro";
 const pageTitle = "Programs - BHS Innovation Fund";
 
-import { contentfulClient } from "../lib/contentful";
-import type { Program } from "../lib/contentful";
+import { contentfulClient } from "../../lib/contentful";
+import type { Program } from "../../lib/contentful";
+import ProgramCard from "../../components/ProgramCard.astro";
 
 const entries = await contentfulClient.getEntries<Program>({
   content_type: "program",
@@ -21,15 +22,23 @@ const allPrograms = entries.items.map((item) => {
     coverImageSrc,
     coverImageAlt,
     faculty,
+    content,
+    isActive,
+    isCurrentlyFunded,
+    featuredOnHomepage,
   } = item.fields;
   return {
     name,
     slug,
-    year: new Date(year).toLocaleDateString(),
+    year: new Date(year).getFullYear(),
     description,
     coverImageSrc,
     coverImageAlt,
     faculty,
+    content,
+    isActive,
+    isCurrentlyFunded,
+    featuredOnHomepage,
   };
 });
 
@@ -38,16 +47,8 @@ const allPrograms = entries.items.map((item) => {
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="[ wrapper ]">
-    <ul>
-      {
-        allPrograms.map((program: any) => (
-          <ProgramPost
-            url={`/programs/${program.slug}/`}
-            title={program.name}
-            image={program.coverImageSrc}
-          />
-        ))
-      }
+    <ul class="[ list-no-padding list-no-bullets flex-grid ]">
+      {allPrograms.map((program: any) => <ProgramCard program={program} />)}
     </ul>
   </div>
 </BaseLayout>

@@ -10,9 +10,46 @@ import highlightImage2 from "../images/highlight-photo-02.jpg";
 import highlightImage3 from "../images/highlight-photo-03.jpg";
 import highlightImage4 from "../images/highlight-photo-04.jpg";
 
-const allPrograms = await getCollection("programs", ({ data }) => {
-  return data.featured === true;
+import { contentfulClient } from "../lib/contentful";
+import type { Program } from "../lib/contentful";
+
+const entries = await contentfulClient.getEntries<Program>({
+  "fields.featuredOnHomepage": true,
+  content_type: "program",
 });
+
+const featuredPrograms = entries.items.map((item) => {
+  const {
+    name,
+    slug,
+    year,
+    description,
+    coverImageSrc,
+    coverImageAlt,
+    faculty,
+    content,
+    isActive,
+    isCurrentlyFunded,
+    featuredOnHomepage,
+  } = item.fields;
+  return {
+    name,
+    slug,
+    year: new Date(year).toLocaleDateString(),
+    description,
+    coverImageSrc,
+    coverImageAlt,
+    faculty,
+    content,
+    isActive,
+    isCurrentlyFunded,
+    featuredOnHomepage,
+  };
+});
+
+const programImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/programs/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <BaseLayout pageTitle={pageTitle} showPageTitle={false}>
@@ -132,23 +169,39 @@ const allPrograms = await getCollection("programs", ({ data }) => {
       <h2 id="featured-programs-heading">Featured Programs</h2>
       <ul class="[ switcher list-no-padding ]">
         {
-          allPrograms.map((program: any) => (
+          featuredPrograms.map((program: any) => (
             <li>
-              <article class="[ program-card ]">
-                <div class="img">
+              <article class="[ card ]">
+                <div class="[ img ]">
                   <Image
-                    src={program.data.image2.src}
-                    alt={program.data.image2.alt}
-                    class="my-class"
+                    src={programImages[program.coverImageSrc]()}
+                    alt={program.coverImageAlt}
+                    class="card__img"
                   />
                 </div>
-                <div class="text">
+                <div class="[ text ]">
                   <h3>
-                    <a href={`/programs/${program.id}/`}>
-                      {program.data.title}
-                    </a>
+                    <a href={`/programs/${program.slug}/`}>{program.name}</a>
                   </h3>
-                  <p>{program.data.description}</p>
+                  <div class="[ program__tags ]">
+                    <span class="[ program__tag program__tag--year ]">
+                      {new Date(program.year).getFullYear()}
+                    </span>
+                    {program.isActive && (
+                      <span class="[ program__tag program__tag--active ]">
+                        Active
+                      </span>
+                    )}
+                    {program.isCurrentlyFunded && (
+                      <span class="[ program__tag program__tag--current ]">
+                        {new Date(program.year).getFullYear() ===
+                        new Date().getFullYear()
+                          ? "New Award"
+                          : "Currently Funded"}
+                      </span>
+                    )}
+                  </div>
+                  <p>{program.description}</p>
                 </div>
               </article>
             </li>
