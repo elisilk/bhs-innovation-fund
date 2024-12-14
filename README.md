@@ -7,10 +7,14 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 ## Table of contents
 
 - [Design](#design)
+  - [Colors](#colors)
+  - [Fonts](#fonts)
+  - [Icons](#icons)
 - [Tech Stack](#tech-stack)
 - [Structure](#structure)
-- [Issues](#issues)
 - [Continued Development](#continued-development)
+  - [Known Issues](#known-issues)
+  - [Suggested Improvements](#suggested-improvements)
 - [Resources](#resources)
 - [Contributors](#contributors)
 
@@ -26,6 +30,9 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 | Vista Blue  | `#7891bc` | `rgb(120, 145, 188)` | ![Vista Blue color](https://placehold.co/300x50/7891bc/ffffff?text=Vista+Blue+-+%237891bc)     |
 | Davy’s Gray | `#4a4c4a` | `rgb(74, 76, 74)`    | ![Davy’s Gray color](https://placehold.co/300x50/4a4c4a/ffffff?text=Davy%27s+Gray+-+%234a4c4a) |
 | Jet         | `#2c2d2b` | `rgb(44, 45, 43)`    | ![Davy’s Gray color](https://placehold.co/300x50/2c2d2b/ffffff?text=Jet+-+%232c2d2b)           |
+
+[!NOTE]
+If I put a color in backticks directly in a paragraph, such as this `#1e2f4e`, will it display a visualization of the color, [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)?
 
 ### Fonts
 
@@ -86,13 +93,23 @@ The website has the following folder and file structure:
 └── tsconfig.json
 ```
 
-## Issues
+## Continued Development
+
+### Known Issues
 
 The following are known issues that should be addressed:
 
-## Continued Development
+- Fluid typography
+- Replace old Twitter icon with newer X icon
+- Remove tags index page
+
+### Suggested Improvements
 
 The following are specific areas that are targeted for improvement:
+
+- Sticky header
+- Events listing and individual events pages
+- Individual faculty pages
 
 ## Resources
 
