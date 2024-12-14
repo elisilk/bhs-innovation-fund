@@ -1,6 +1,8 @@
 # BHS Innovation Fund Website (sandbox)
 
-This website is a testing ground for the Brookline High School Innovation Fund, a nonprofit organization in Brookline, MA, USA. The organization's mission is to catalyze innovation at Brookline High School by supporting faculty-driven curricular initiatives that will inspire our students and prepare them to thrive in a changing world.
+This website is a testing ground for the [Brookline High School Innovation Fund](https://bhsinnovationfund.org), a nonprofit organization in Brookline, MA, USA. The organization's mission is to catalyze innovation at Brookline High School by supporting faculty-driven curricular initiatives that will inspire our students and prepare them to thrive in a changing world.
+
+The Innovation Fund's official, public-facing website is: [https://bhsinnovationfund.org](https://bhsinnovationfund.org)
 
 ## Table of contents
 
@@ -16,18 +18,21 @@ This website is a testing ground for the Brookline High School Innovation Fund, 
 
 ### Colors
 
-- Delft Blue - rgb(30, 47, 78) / #1e2f4e – sample text – sample text
-- Amber - rgb(247, 188, 28) / #f7bc1c – sample text – sample text
-- Auburn - rgb(169, 61, 53) / #a93d35 – sample text – sample text
-- Vista Blue - rgb(120, 145, 188) / #7891bc – sample text – sample text
-- Davy’s gray - rgb(74, 76, 74) / #4a4c4a – sample text – sample text
-- Jet - rgb(44, 45, 43) / #2c2d2b – sample text – sample text
+| Name        | Hex       | RGB                  | Sample                                                                                         |
+| ----------- | --------- | -------------------- | ---------------------------------------------------------------------------------------------- |
+| Delft Blue  | `#1e2f4e` | `rgb(30, 47, 78)`    | ![Delft Blue color](https://placehold.co/300x50/1e2f4e/ffffff?text=Delft+Blue+-+%231e2f4e)     |
+| Amber       | `#f7bc1c` | `rgb(247, 188, 28)`  | ![Amber color](https://placehold.co/300x50/f7bc1c/ffffff?text=Amber+-+%23f7bc1c)               |
+| Auburn      | `#a93d35` | `rgb(169, 61, 53)`   | ![Auburn color](https://placehold.co/300x50/a93d35/ffffff?text=Auburn+-+%23a93d35)             |
+| Vista Blue  | `#7891bc` | `rgb(120, 145, 188)` | ![Vista Blue color](https://placehold.co/300x50/7891bc/ffffff?text=Vista+Blue+-+%237891bc)     |
+| Davy’s Gray | `#4a4c4a` | `rgb(74, 76, 74)`    | ![Davy’s Gray color](https://placehold.co/300x50/4a4c4a/ffffff?text=Davy%27s+Gray+-+%234a4c4a) |
+| Jet         | `#2c2d2b` | `rgb(44, 45, 43)`    | ![Davy’s Gray color](https://placehold.co/300x50/2c2d2b/ffffff?text=Jet+-+%232c2d2b)           |
 
 ### Fonts
 
-[Nunito](https://fonts.google.com/specimen/Nunito?query=source)
-
-[Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans?query=source)
+| Name                                                                      | Sample                                                                                           |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [Nunito](https://fonts.google.com/specimen/Nunito?query=source)           | ![Nunito font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito&font=nunito)                |
+| [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans?query=source) | ![Nunito Sans font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito+Sans&font=nunito-sans) |
 
 ### Icons
 
