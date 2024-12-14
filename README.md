@@ -32,7 +32,7 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 | Jet         | `#2c2d2b` | `rgb(44, 45, 43)`    | ![Davy’s Gray color](https://placehold.co/300x50/2c2d2b/ffffff?text=Jet+-+%232c2d2b)           |
 
 > [!NOTE]
-> If I put a color in backticks directly in a paragraph, such as this `#1E2F4E`, will it display a visualization of the color, [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)?
+> I am a little disappointed that when I put a color in this README file (e.g., `#1E2F4E`), that it doesn't display a visualization of the color [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)? This seems to be because the "visualization of the color is only supported in issues, pull requests, and discussions"? :disappointed:
 
 ### Fonts
 
