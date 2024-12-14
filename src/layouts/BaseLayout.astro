@@ -8,6 +8,8 @@ const { pageTitle, showPageTitle = true } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
 
     <link
       rel="icon"
@@ -26,8 +28,6 @@ const { pageTitle, showPageTitle = true } = Astro.props;
     <link rel="manifest" href="/images/favicon/site.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
 
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
       content="The website for the Brookline High School Innovation Fund, a nonprofit focused on funding teacher-driven curricular innovations at Brookline High School in Brookline, MA, USA."
