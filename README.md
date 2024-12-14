@@ -31,8 +31,8 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 | Davy’s Gray | `#4a4c4a` | `rgb(74, 76, 74)`    | ![Davy’s Gray color](https://placehold.co/300x50/4a4c4a/ffffff?text=Davy%27s+Gray+-+%234a4c4a) |
 | Jet         | `#2c2d2b` | `rgb(44, 45, 43)`    | ![Davy’s Gray color](https://placehold.co/300x50/2c2d2b/ffffff?text=Jet+-+%232c2d2b)           |
 
-[!NOTE]
-If I put a color in backticks directly in a paragraph, such as this `#1e2f4e`, will it display a visualization of the color, [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)?
+> [!NOTE]
+> If I put a color in backticks directly in a paragraph, such as this `#1E2F4E`, will it display a visualization of the color, [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)?
 
 ### Fonts
 
