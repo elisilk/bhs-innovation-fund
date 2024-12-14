@@ -16,6 +16,9 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
   - [Known Issues](#known-issues)
   - [Suggested Improvements](#suggested-improvements)
 - [Resources](#resources)
+  - [Design Inspiration](#design-inspiration)
+  - [Web Development](#web-development)
+  - [Technical Support](#technical-support)
 - [Contributors](#contributors)
 
 ## Design
@@ -32,7 +35,7 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 | Jet         | `#2c2d2b` | `rgb(44, 45, 43)`    | ![Davy’s Gray color](https://placehold.co/300x50/2c2d2b/ffffff?text=Jet+-+%232c2d2b)           |
 
 > [!NOTE]
-> I am a little disappointed that when I put a color in this README file (e.g., `#1E2F4E`), that it doesn't display a visualization of the color [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)? This seems to be because the "visualization of the color is only supported in issues, pull requests, and discussions"? :disappointed:
+> I am a little disappointed that when I put a color in this README file (e.g., `#1E2F4E`), that it doesn't display a visualization of the color [as suggested in the GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#supported-color-models)? This seems to be because the "visualization of the color is only supported in issues, pull requests, and discussions". :disappointed:
 
 ### Fonts
 
@@ -115,6 +118,25 @@ The following are specific areas that are targeted for improvement:
 
 The following were useful resources in the website's development and current state:
 
+### Design Inspiration
+
+- [Brookline Education Foundation](https://brooklinefoundation.org/)
+- [Broad Institute](https://www.broadinstitute.org/)
+
+### Web Development
+
+- [Every Layout](https://every-layout.dev/)
+- [CUBE CSS](https://cube.fyi/)
+- [Inclusive Components](https://inclusive-components.design/)
+
+### Technical Support
+
+- [Astro Docs](https://docs.astro.build/en/getting-started/)
+  - [Contentful & Astro](https://docs.astro.build/en/guides/cms/contentful/)
+  - [Deploy your Astro Site to Netlify](https://docs.astro.build/en/guides/deploy/netlify/)
+- [Contentful Help Center](https://www.contentful.com/help/)
+
 ## Contributors
 
-- [Eli Silk](https://github.com/elisilk)
+- [Eli Silk](https://github.com/elisilk) - Conceived of and implemented this alternative testing ground for a website refresh.
+- [Bartlett Interactive](https://bi.studio/) - Designed, implemented, and currently maintain the official BHS Innovation Fund website.
