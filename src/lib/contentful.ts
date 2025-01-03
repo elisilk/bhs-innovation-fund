@@ -5,6 +5,7 @@ export interface Faculty {
   contentTypeId: "faculty",
   fields: {
     name: EntryFieldTypes.Text,
+    slug: EntryFieldTypes.Text,
     department: EntryFieldTypes.Text,
     firstName: EntryFieldTypes.Text,
     lastName: EntryFieldTypes.Text,

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProgramPost from "../../components/ProgramPost.astro";
+
 const pageTitle = "Faculty - BHS Innovation Fund";
 
 import { contentfulClient } from "../../lib/contentful";
@@ -11,9 +11,10 @@ const entries = await contentfulClient.getEntries<Faculty>({
 });
 
 const allFaculty = entries.items.map((item) => {
-  const { name, department } = item.fields;
+  const { name, slug, department } = item.fields;
   return {
     name,
+    slug,
     department,
   };
 });
@@ -25,7 +26,9 @@ const allFaculty = entries.items.map((item) => {
       {
         allFaculty.map((faculty: any) => (
           <li>
-            {faculty.name} ({faculty.department})
+            <a href={`/faculty/${faculty.slug}/`}>
+              {faculty.name} ({faculty.department})
+            </a>
           </li>
         ))
       }

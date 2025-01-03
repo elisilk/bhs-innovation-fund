@@ -1,0 +1,38 @@
+---
+import { contentfulClient } from "../../lib/contentful";
+import type { Program, Faculty } from "../../lib/contentful";
+
+import FacultyPageLayout from "../../layouts/FacultyPageLayout.astro";
+
+export async function getStaticPaths() {
+  const { items } = await contentfulClient.getEntries<Faculty>({
+    content_type: "faculty",
+  });
+  return items.map((item) => ({
+    params: { slug: item.fields.slug },
+    props: {
+      item,
+    },
+  }));
+}
+
+const { item } = Astro.props;
+
+const linkedPrograms = await contentfulClient.getEntries<Program>({
+  content_type: "program",
+  "fields.faculty.sys.id[in]": item.sys.id,
+});
+
+console.log("Faculty:", item.fields.name);
+console.log("Associated Programs:");
+if (linkedPrograms && linkedPrograms.total > 0) {
+  linkedPrograms.items.forEach((program) => {
+    console.log("-", program.fields.name);
+  });
+  /* console.log(linkedPrograms.items[0].fields.faculty); */
+} else {
+  console.log("- (none)");
+}
+---
+
+<FacultyPageLayout frontmatter={item.fields} linkedPrograms={linkedPrograms} />

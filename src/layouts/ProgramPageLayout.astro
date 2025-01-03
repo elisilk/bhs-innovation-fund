@@ -47,9 +47,11 @@ if (!images[frontmatter.coverImageSrc])
         {
           frontmatter.faculty && frontmatter.faculty.length > 0 && (
             <ul>
-              {frontmatter.faculty.map((educator: any) => (
+              {frontmatter.faculty.map((faculty: any) => (
                 <li>
-                  {educator.fields.name} ({educator.fields.department})
+                  <a href={`/faculty/${faculty.fields.slug}/`}>
+                    {faculty.fields.name} ({faculty.fields.department})
+                  </a>
                 </li>
               ))}
             </ul>

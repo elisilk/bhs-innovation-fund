@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter, linkedPrograms } = Astro.props;
+
+console.log(linkedPrograms.items);
+---
+
+<BaseLayout pageTitle={frontmatter.name} showPageTitle={false}>
+  <article class="[ program ] [ wrapper flow ]">
+    <h1>{frontmatter.name}</h1>
+    <ul>
+      <li>Department: {frontmatter.department}</li>
+      {
+        linkedPrograms && linkedPrograms.items.length > 0 && (
+          <li>
+            Programs Involved in:
+            <ul>
+              {linkedPrograms.items.map((program: any) => (
+                <li>
+                  <a href={`/programs/${program.fields.slug}/`}>
+                    {program.fields.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        )
+      }
+      <li>Photo (optional)</li>
+      <li>Short Bio (optional)</li>
+      <li>Quotations about the Fund (optional)</li>
+    </ul>
+  </article>
+</BaseLayout>
