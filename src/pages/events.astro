@@ -1,6 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Events - BHS Innovation Fund";
+
+const allEvents = Object.values(
+  import.meta.glob("./events/*.md", { eager: true })
+);
+
+const pageTitle = "Events";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <div class="[ wrapper flow ]">
+    <h1>{pageTitle}</h1>
+
+    <ul>
+      {
+        allEvents.map((event: any) => (
+          <li>
+            <a href={event.url}>{event.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

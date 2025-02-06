@@ -1,0 +1,46 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/events/*.{jpeg,jpg,png,gif}"
+);
+
+if (!images[frontmatter.coverImageSrc])
+  throw new Error(
+    `"${frontmatter.coverImageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+
+const dateOptions: object = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <article class="[ event ] [ wrapper flow ]">
+    <h1>{frontmatter.title}</h1>
+    <p>
+      {new Date(frontmatter.date).toLocaleDateString("en-US", dateOptions)}
+    </p>
+    <p>{frontmatter.location}</p>
+    <p>{frontmatter.description}</p>
+    <p>{frontmatter.schoolYear}</p>
+    <p>{frontmatter.timeStart}</p>
+
+    <div>
+      <Image
+        src={images[frontmatter.coverImageSrc]()}
+        alt={frontmatter.coverImageAlt}
+        class="program__hero__image"
+      />
+    </div>
+
+    <slot />
+  </article>
+</BaseLayout>

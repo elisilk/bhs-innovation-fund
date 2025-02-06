@@ -1,0 +1,10 @@
+---
+layout: ../../layouts/EventLayout.astro
+title: "5K Walk/Run for Innovation"
+schoolYear: 2024-2025
+date: 2025-05-04
+location: "(Location TBD)"
+description: "Join members of the BHS community for a fun outdoor event while raising money for innovation."
+coverImageSrc: "/src/images/events/5k-2023-2024-photo-01.jpeg"
+coverImageAlt: "The start line at the 2024 5K walk/run for innovation."
+---
