@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const pageTitle = "Faculty - BHS Innovation Fund";
+const pageTitle = "Faculty";
 
 import { contentfulClient } from "../../lib/contentful";
 import type { Faculty } from "../../lib/contentful";
@@ -21,7 +21,8 @@ const allFaculty = entries.items.map((item) => {
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="[ wrapper ]">
+  <div class="[ wrapper flow ]">
+    <h1>{pageTitle}</h1>
     <ul>
       {
         allFaculty.map((faculty: any) => (

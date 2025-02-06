@@ -1,0 +1,43 @@
+---
+import SocialLink from "./SocialLink.astro";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<ul class:list={["[ social-list ]", className]} {...rest}>
+  <li>
+    <SocialLink
+      url="https://facebook.com/BHSInnovationFund"
+      icon="logo-facebook"
+      alt="BHS Innovation Fund on Facebook"
+    />
+  </li>
+  <li>
+    <SocialLink
+      url="https://x.com/bhsinnofund"
+      icon="logo-twitter"
+      alt="BHS Innovation Fund on X/Twitter"
+    />
+  </li>
+  <li>
+    <SocialLink
+      url="https://instagram.com/bhsinnovationfund"
+      icon="logo-instagram"
+      alt="BHS Innovation Fund on Instagram"
+    />
+  </li>
+  <li>
+    <SocialLink
+      url="https://linkedin.com/company/bhs-innovation-fund"
+      icon="logo-linkedin"
+      alt="BHS Innovation Fund on LinkedIn"
+    />
+  </li>
+  <li>
+    <SocialLink
+      url="https://youtube.com/@bhsinnovationfund1222"
+      icon="logo-youtube"
+      alt="BHS Innovation Fund on YouTube"
+    />
+  </li>
+</ul>

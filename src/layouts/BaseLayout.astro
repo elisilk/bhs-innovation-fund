@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-const { pageTitle, showPageTitle = true } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -41,21 +41,12 @@ const { pageTitle, showPageTitle = true } = Astro.props;
       rel="stylesheet"
     />
 
-    <title>{pageTitle}</title>
+    <title>{pageTitle} - BHS Innovation Fund</title>
   </head>
   <body class="[ bg-neutral ]">
     <Header />
 
     <main id="main-content">
-      {
-        showPageTitle ? (
-          <div class="[ page-title ] [ wrapper ]">
-            <h1>{pageTitle}</h1>
-          </div>
-        ) : (
-          <h1 class="visually-hidden">pageTitle</h1>
-        )
-      }
       <slot />
     </main>
 

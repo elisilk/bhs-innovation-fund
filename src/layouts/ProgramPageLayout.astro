@@ -16,7 +16,7 @@ if (!images[frontmatter.coverImageSrc])
   );
 ---
 
-<BaseLayout pageTitle={frontmatter.name} showPageTitle={false}>
+<BaseLayout pageTitle={frontmatter.name}>
   <article class="[ program ] [ wrapper flow ]">
     <div class="[ program__hero ]">
       <div class="[ program__hero__text ] [ flow ]">
@@ -75,7 +75,5 @@ if (!images[frontmatter.coverImageSrc])
           ]"
       set:html={documentToHtmlString(frontmatter.content)}
     />
-
-    <!-- <slot /> -->
   </article>
 </BaseLayout>

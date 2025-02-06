@@ -84,6 +84,7 @@ p {
 
 ul,
 ol {
+  margin: 0;
   padding: 0;
   padding-inline-start: 2ch;
 }
@@ -110,6 +111,11 @@ h4 {
   line-height: 1.1;
   text-wrap: balance;
   text-align: center;
+}
+
+h1 {
+  color: var(--clr-primary);
+  font-size: var(--fs-900);
 }
 
 p,
@@ -165,7 +171,7 @@ body {
 }
 
 .flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
+  margin-block-start: var(--flow-space, 1.5em);
 }
 
 .switcher {
@@ -381,7 +387,7 @@ body {
 
 .card:focus-within,
 .card:hover {
-  box-shadow: 0 0 0 3px;
+  box-shadow: 0 0 0 3px var(--clr-primary);
 }
 
 .card:hover a,
@@ -499,6 +505,29 @@ header {
   --wrapper-padding-block: 0.75rem;
 }
 
+.header__banner > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: end;
+  align-items: center;
+}
+
+.header__banner ul:not(.social-list) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  text-align: end;
+}
+
+@media screen and (width < 650px) {
+  .header__banner ul:not(.social-list) {
+    display: none;
+  }
+}
+
 .header__main {
   border-bottom: 5px solid var(--clr-secondary);
 
@@ -515,21 +544,28 @@ header {
   width: auto;
 }
 
+/* Blocks -- Sections -- Social List */
+
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1ch;
+
+  ion-icon {
+    display: block;
+    /* font-size: 32px; */
+  }
+}
+
 /* Blocks -- Sections -- Footer */
 
 .footer__main {
   --wrapper-padding-block: 2.5rem;
-
-  .social-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1ch;
-
-    ion-icon {
-      font-size: 32px;
-    }
-  }
 }
 
 .footer__main > div {
@@ -547,7 +583,7 @@ header {
   margin-block-end: 1rem;
 }
 
-.footer__main ul {
+.footer__main ul:not(.social-list) {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -724,11 +760,6 @@ header {
 
 .program__hero__text {
   justify-self: start;
-}
-
-.program__name {
-  color: var(--clr-primary);
-  font-size: var(--fs-900);
 }
 
 .program__tags {

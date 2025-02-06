@@ -1,4 +1,6 @@
 ---
+import SocialList from "./SocialList.astro";
+
 import { Image } from "astro:assets";
 import logoImage from "../images/logo/BIF-Logo-Color-Transparent-320w-321h.png";
 ---
@@ -8,10 +10,31 @@ import logoImage from "../images/logo/BIF-Logo-Color-Transparent-320w-321h.png";
 
   <div class="[ header__banner ] [ bg-primary ]">
     <div class="[ wrapper ]">
-      <p>
+      <!-- <p>
         MERRY + BRIGHT = ACADEMIC INNOVATION! Join us in shaping merry and
-        bright futures this season. GIVE TODAY!
-      </p>
+        bright futures this season. <a
+          href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
+          rel="external"
+          target="_blank">GIVE TODAY!</a
+        >
+      </p> -->
+      <SocialList class="[ icon--16 ]" />
+      <ul class="[ header__xtra-list ]">
+        <li>
+          <a
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
+            rel="external"
+            target="_blank">Donate to the Fund</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd-E429F6JQIctwUuyTYnGEksqG-riLhewTjBBg5m-1xzcR0A/viewform"
+            rel="external"
+            target="_blank">Join Our Email List</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
 
