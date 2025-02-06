@@ -14,6 +14,7 @@ if (!images[frontmatter.coverImageSrc])
     `"${frontmatter.coverImageSrc}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
   );
 
+const date = new Date(frontmatter.date);
 const dateOptions: object = {
   weekday: "long",
   year: "numeric",
@@ -24,21 +25,45 @@ const dateOptions: object = {
 
 <BaseLayout pageTitle={frontmatter.title}>
   <article class="[ event ] [ wrapper flow ]">
-    <h1>{frontmatter.title}</h1>
-    <p>
-      {new Date(frontmatter.date).toLocaleDateString("en-US", dateOptions)}
-    </p>
-    <p>{frontmatter.location}</p>
-    <p>{frontmatter.description}</p>
-    <p>{frontmatter.schoolYear}</p>
-    <p>{frontmatter.timeStart}</p>
+    <div class="[ event__hero ]">
+      <div class="[ event__hero__text ] [ flow ]">
+        <div class="event__header">
+          <h1 class="[ event__name ]">{frontmatter.title}</h1>
+          {
+            frontmatter.date && (
+              <div class="[ event__date ]">
+                <span class="[ event__month ]">
+                  {date.toLocaleDateString("en-US", { month: "short" })}
+                </span>
+                <span class="[ event__day ]">
+                  {date.toLocaleDateString("en-US", { day: "numeric" })}
+                </span>
+              </div>
+            )
+          }
+        </div>
 
-    <div>
-      <Image
-        src={images[frontmatter.coverImageSrc]()}
-        alt={frontmatter.coverImageAlt}
-        class="program__hero__image"
-      />
+        <p class="[ event__description ]">
+          <em>{frontmatter.description}</em>
+        </p>
+
+        <p class="[ event__location ]">{frontmatter.location}</p>
+        {
+          frontmatter.date && (
+            <p class="[ event__date--full ]">
+              {date.toLocaleDateString("en-US", dateOptions)}
+            </p>
+          )
+        }
+        <p class="[ event__start ]">{frontmatter.timeStart}</p>
+      </div>
+      <div>
+        <Image
+          src={images[frontmatter.coverImageSrc]()}
+          alt={frontmatter.coverImageAlt}
+          class="program__hero__image"
+        />
+      </div>
     </div>
 
     <slot />

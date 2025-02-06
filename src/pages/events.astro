@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import EventCard from "../components/EventCard.astro";
 
 const allEvents = Object.values(
   import.meta.glob("./events/*.md", { eager: true })
@@ -12,12 +13,10 @@ const pageTitle = "Events";
   <div class="[ wrapper flow ]">
     <h1>{pageTitle}</h1>
 
-    <ul>
+    <ul class="[ list-no-padding list-no-bullets flex-grid ]">
       {
         allEvents.map((event: any) => (
-          <li>
-            <a href={event.url}>{event.frontmatter.title}</a>
-          </li>
+          <EventCard event={event.frontmatter} url={event.url} />
         ))
       }
     </ul>
