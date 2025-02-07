@@ -1,8 +1,11 @@
-// Import the glob loader
-import { glob } from "astro/loaders";
-// Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content";
-// Define a `loader` and `schema` for each collection
+// 1. Import utilities from `astro:content`
+import { defineCollection, z } from 'astro:content';
+
+// 2. Import loader(s)
+import { glob } from 'astro/loaders';
+
+// 3. Define a `loader` and `schema` for each collection
+
 const programs = defineCollection({
     loader: glob({ pattern: '**/[^_]*.md', base: "./src/programs" }),
     schema: ({ image }) => z.object({
@@ -22,5 +25,20 @@ const programs = defineCollection({
       featured: z.boolean()
     })
 });
-// Export a single `collections` object to register your collection(s)
-export const collections = { programs };
+
+const events = defineCollection({
+    loader: glob({ pattern: '**/[^_]*.md', base: "./src/events" }),
+    schema: ({ image }) => z.object({
+      title: z.string(),
+      schoolYear: z.string(),
+      date: z.date().optional(),
+      location: z.string().optional(),
+      description: z.string(),
+      coverImageSrc: z.string(),
+      coverImageAlt: z.string(),
+      featured: z.boolean()
+    })
+});
+
+// 4. Export a single `collections` object to register your collection(s)
+export const collections = { programs, events };

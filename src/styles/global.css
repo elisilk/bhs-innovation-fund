@@ -845,6 +845,19 @@ header {
 
 /* Blocks -- Sections -- Events */
 
+.programs__content .button,
+.events__content .button {
+  display: block;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: var(--fs-500);
+}
+
+.events__content ul {
+  --s1: 1.5rem;
+  list-style: none;
+}
+
 .event__hero__image {
   object-fit: cover;
   height: 300px;

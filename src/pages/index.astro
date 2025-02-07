@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProgramCard from "../components/ProgramCard.astro";
+import EventCard from "../components/EventCard.astro";
 
 const pageTitle = "Homepage";
 
@@ -52,6 +53,12 @@ const featuredPrograms = entries.items.map((item) => {
 const programImages = import.meta.glob<{ default: ImageMetadata }>(
   "/src/images/programs/*.{jpeg,jpg,png,gif}"
 );
+
+const featuredEvents = await getCollection("events", ({ data }) => {
+  return data.featured === true;
+});
+
+const allEvents = await getCollection("events");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -65,7 +72,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
         </h2>
         <a
           href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
-          class="button"
+          class="[ button ]"
           rel="external"
           target="_blank">Donate Today</a
         >
@@ -88,6 +95,21 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
     </div>
   </section>
 
+  <section class="[ events ]" aria-labelledby="events-heading">
+    <div class="[ events__content ] [ wrapper flow ]">
+      <h2 id="events-heading">Featured Events</h2>
+      <ul class="[ switcher list-no-padding list-no-bullets ]">
+        {
+          featuredEvents.map((event: any) => (
+            <EventCard event={event.data} url={event.id} />
+          ))
+        }
+      </ul>
+
+      <a class="[ button ]" href="/events/">More Events</a>
+    </div>
+  </section>
+
   <section
     class="[ highlights ] [ bg-neutral-200 ]"
     aria-labelledby="highlights-heading"
@@ -106,7 +128,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
             interest, develop project-based learning skills, and reinforce
             academic and social foundations for growth.
           </p>
-          <a class="button" href="/programs/">Programs We Funded</a>
+          <a class="[ button ]" href="/programs/">Programs We Funded</a>
         </div>
       </div>
       <div class="highlight__row">
@@ -124,7 +146,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
             We ensure students gain exposure to new ideas and different ways of
             learning so they can thrive.
           </p>
-          <a class="button" href="/impact/">Our Impact</a>
+          <a class="[ button ]" href="/impact/">Our Impact</a>
         </div>
       </div>
       <div class="highlight__row">
@@ -142,7 +164,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
             Selected programs may be incorporated into the permanent BHS
             offerings.
           </p>
-          <a class="button" href="/process/">Our Process</a>
+          <a class="[ button ]" href="/process/">Our Process</a>
         </div>
       </div>
       <div class="highlight__row">
@@ -157,7 +179,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
             is solely reliant on community support.
           </p>
           <a
-            class="button"
+            class="[ button ]"
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WMETUBMXB4DEQ&source=url"
             rel="external"
             target="_blank">Donate Now</a
@@ -177,6 +199,7 @@ const programImages = import.meta.glob<{ default: ImageMetadata }>(
           ))
         }
       </ul>
+      <a class="[ button ]" href="/programs/">More Programs</a>
     </div>
   </section>
 </BaseLayout>

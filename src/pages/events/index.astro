@@ -1,12 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import EventCard from "../components/EventCard.astro";
-
-const allEvents = Object.values(
-  import.meta.glob("./events/*.md", { eager: true })
-);
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EventCard from "../../components/EventCard.astro";
 
 const pageTitle = "Events";
+const allEvents = await getCollection("events");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -16,7 +14,7 @@ const pageTitle = "Events";
     <ul class="[ list-no-padding list-no-bullets flex-grid ]">
       {
         allEvents.map((event: any) => (
-          <EventCard event={event.frontmatter} url={event.url} />
+          <EventCard event={event.data} url={event.id} />
         ))
       }
     </ul>
