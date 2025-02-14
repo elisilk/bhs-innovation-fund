@@ -39,10 +39,10 @@ The Innovation Fund's official, public-facing website is: [https://bhsinnovation
 
 ### Fonts
 
-| Name                                                                      | Sample                                                                                           |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| [Nunito](https://fonts.google.com/specimen/Nunito?query=source)           | ![Nunito font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito&font=nunito)                |
-| [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans?query=source) | ![Nunito Sans font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito+Sans&font=nunito-sans) |
+| Name                                                         | Sample                                                                                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| [Nunito](https://fonts.google.com/specimen/Nunito)           | ![Nunito font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito&font=nunito)                |
+| [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) | ![Nunito Sans font](https://placehold.co/300x50/1e2f4e/ffffff?text=Nunito+Sans&font=nunito-sans) |
 
 ### Icons
 

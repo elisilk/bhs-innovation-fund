@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle = "Design System";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="[ wrapper flow ]">
+    <h1>{pageTitle}</h1>
+
+    <h2>Colors</h2>
+
+    <h2>Typography</h2>
+    <p>
+      <a href="https://fonts.google.com/specimen/Nunito">Nunito</a>
+    </p>
+    <p>
+      <a href="https://fonts.google.com/specimen/Nunito+Sans">Nunito Sans</a>
+    </p>
+
+    <h2>Icons</h2>
+    <p><a href="https://ionic.io/ionicons">Ion Icons</a></p>
+
+    <h2>Components</h2>
+
+    <h3>Buttons</h3>
+    <h3>Tags</h3>
+    <h3>Cards</h3>
+
+    <h2>Pages</h2>
+    <h3>Homepage</h3>
+    <ol>
+      <li>A reproduction of the existing design.</li>
+      <li>Makes featured events more prominent.</li>
+    </ol>
+
+    <h2>Technology</h2>
+    <ul>
+      <li>
+        <a href="https://astro.build/">Astro</a> - static site generator
+      </li>
+      <li>
+        <a href="https://www.contentful.com/">Contentful</a> - headless content management
+        system
+      </li>
+      <li>
+        <a href="https://github.com/">GitHub</a> - online software version control
+        platform
+      </li>
+      <li>
+        <a href="https://www.netlify.com/">Netlify</a> - build system and hosting
+      </li>
+    </ul>
+  </div>
+</BaseLayout>

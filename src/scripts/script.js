@@ -1,3 +1,19 @@
+/* Sticky header */
+
+const header = document.getElementById("header");
+
+document.addEventListener("scroll", (e) => {
+  if (window.scrollY > 0) {
+    if (!header.classList.contains("shadow")) header.classList.add("shadow");
+    if (!header.classList.contains("header--small"))
+      header.classList.add("header--small");
+  } else {
+    if (header.classList.contains("shadow")) header.classList.remove("shadow");
+    if (header.classList.contains("header--small"))
+      header.classList.remove("header--small");
+  }
+});
+
 /* Mobile navigation menu */
 
 const navToggle = document.querySelector('[aria-controls="primary-nav"]');
